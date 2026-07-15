@@ -1,4 +1,4 @@
 Today I learned:
 - Terminal
 - Git
-- GitHub
+- GitHub basics
