@@ -1,0 +1,6 @@
+Merry,200 
+Abel,300 
+Merry,200 
+Sara,700 
+Abel,100 
+Sara,300
