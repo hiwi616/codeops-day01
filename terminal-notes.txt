@@ -1,14 +1,16 @@
-# CodeOps Day 1
+Day 1 Notes
+Today I learned:
+Terminal
+Git
+GitHub
 
-## What I Learned
 
-Today I learned the basics of:
-- Git
-- Git Bash
-- VS Code
-- GitHub
-- Terminal commands
+Git is a version control system.
 
-## My Goal
+Git helps developers track changes in their projects.
 
-My goal is to become a full-stack developer.
+GitHub is an online platform where we can store Git repositories.
+
+Git Bash allows us to use Git and terminal commands.
+
+VS Code is my code editor.
