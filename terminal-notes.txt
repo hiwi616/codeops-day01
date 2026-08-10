@@ -1,0 +1,14 @@
+# CodeOps Day 1
+
+## What I Learned
+
+Today I learned the basics of:
+- Git
+- Git Bash
+- VS Code
+- GitHub
+- Terminal commands
+
+## My Goal
+
+My goal is to become a full-stack developer.
