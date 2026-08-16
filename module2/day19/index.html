@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 19 - DOM Warm-up</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.5;
+    }
+    section {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .highlight {
+      color: #fff;
+      background: #2563eb;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    #outer-box {
+      border: 2px dashed #999;
+      padding: 12px;
+      display: inline-block;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    li button {
+      margin-left: 8px;
+    }
+    #log {
+      font-family: monospace;
+      background: #f4f4f4;
+      padding: 8px;
+      min-height: 20px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-heading">Day 19 DOM Exercises</h1>
+
+  <section>
+    <h2>1. textContent + classList.toggle</h2>
+    <button id="change-heading-btn">Change heading & toggle highlight</button>
+  </section>
+
+  <section>
+    <h2>2. createElement + append (Ethiopian cities)</h2>
+    <ul id="city-list"></ul>
+  </section>
+
+  <section>
+    <h2>3. Click listener + event bubbling</h2>
+    <div id="outer-box">
+      <button id="bubble-btn">Click me</button>
+    </div>
+    <div id="log"></div>
+  </section>
+
+  <section>
+    <h2>4. Delegated listener for delete buttons</h2>
+    <ul id="delete-list">
+      <li>Apple <button class="delete-btn">Delete</button></li>
+      <li>Banana <button class="delete-btn">Delete</button></li>
+      <li>Mango <button class="delete-btn">Delete</button></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Form submit -> add to list</h2>
+    <form id="add-item-form">
+      <input type="text" id="item-input" placeholder="Type an item..." />
+      <button type="submit">Add</button>
+    </form>
+    <ul id="submitted-list"></ul>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
