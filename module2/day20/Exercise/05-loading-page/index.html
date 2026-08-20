@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 20 - Loading States</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 500px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    #status {
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    #status.loading {
+      background: #eef2ff;
+      color: #3730a3;
+    }
+    #status.success {
+      background: #ecfdf5;
+      color: #065f46;
+    }
+    #status.error {
+      background: #fef2f2;
+      color: #991b1b;
+    }
+    button {
+      margin-top: 16px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>USD to ETB rate</h1>
+  <p>
+    Try this with your network connected, then again with DevTools ->
+    Network tab set to "Offline", to see all three states.
+  </p>
+
+  <div id="status" class="loading">Loading...</div>
+
+  <button id="reload-btn">Fetch again</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
