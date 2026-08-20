@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Addis Market — Shopping List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="market-border" aria-hidden="true"></div>
+
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">yene gebeya · my market</p>
+      <h1>Addis Market</h1>
+      <p class="tagline">Write it down before you go. Cross it off while you're there.</p>
+    </header>
+
+    <section class="ticket" aria-label="Shopping list">
+      <form id="item-form" class="item-form" novalidate>
+        <div class="field">
+          <label for="item-name">Item</label>
+          <input
+            type="text"
+            id="item-name"
+            name="item-name"
+            placeholder="Teff, 5kg"
+            autocomplete="off"
+          />
+        </div>
+        <div class="field field--price">
+          <label for="item-price">Price</label>
+          <div class="price-input">
+            <span class="currency">ETB</span>
+            <input
+              type="number"
+              id="item-price"
+              name="item-price"
+              placeholder="0.00"
+              min="0"
+              step="0.01"
+              inputmode="decimal"
+            />
+          </div>
+        </div>
+        <button type="submit" class="add-btn">Add to list</button>
+      </form>
+
+      <p id="form-error" class="form-error" role="alert" hidden>
+        Enter both an item name and a price before adding.
+      </p>
+
+      <div class="list-head">
+        <span class="list-head__label">Your list</span>
+        <span class="list-head__count" id="item-count">0 items</span>
+      </div>
+
+      <ul id="item-list" class="item-list">
+        <!-- rows injected by app.js -->
+      </ul>
+
+      <p id="empty-state" class="empty-state">
+        Nothing on the list yet. Add the first thing you need.
+      </p>
+
+      <div class="total-row">
+        <span class="total-label">Running total</span>
+        <span class="total-value"><span class="currency">ETB</span> <span id="total-amount">0.00</span></span>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <p>Bought items stay on the list, struck through, so you remember what's already in the basket.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
