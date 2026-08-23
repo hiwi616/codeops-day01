@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step 1 - Theme Toggle</title>
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --text: #2b2b2b;
+      --card: #ffffff;
+    }
+    body.dark {
+      --bg: #1c1c1c;
+      --text: #f0f0f0;
+      --card: #2a2a2a;
+    }
+    body {
+      font-family: sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 60px 16px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .card {
+      max-width: 360px;
+      margin: 0 auto;
+      background: var(--card);
+      padding: 24px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    button {
+      margin-top: 16px;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      border: 1px solid #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Theme Toggle Demo</h1>
+    <p>This is the pattern from step 1 - it can be dropped into any earlier project.</p>
+    <button id="toggle-theme-btn">Toggle theme</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
