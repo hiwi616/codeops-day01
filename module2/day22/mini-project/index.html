@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethiopia Weather Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-emerald-50 to-amber-50 text-slate-800">
+
+  <main class="max-w-xl mx-auto px-4 py-10">
+
+    <header class="mb-6 text-center">
+      <h1 class="text-2xl font-bold text-emerald-800">🇪🇹 Ethiopia Weather Explorer</h1>
+      <p class="text-sm text-slate-500 mt-1">Live weather for cities across Ethiopia, powered by Open-Meteo.</p>
+    </header>
+
+    <div class="bg-white rounded-2xl shadow-md p-5 mb-6">
+      <label for="city-select" class="block text-sm font-medium text-slate-600 mb-2">Choose a city</label>
+      <select
+        id="city-select"
+        class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+      >
+        <option value="addis-ababa">Addis Ababa</option>
+        <option value="bahir-dar">Bahir Dar</option>
+        <option value="hawassa">Hawassa</option>
+        <option value="mekelle">Mekelle</option>
+        <option value="gondar">Gondar</option>
+        <option value="dire-dawa">Dire Dawa</option>
+        <option value="jimma">Jimma</option>
+        <option value="adama">Adama</option>
+      </select>
+    </div>
+
+    <p id="status" class="text-center text-sm mb-4 min-h-[1.25rem]"></p>
+
+    <div id="current-card" class="bg-white rounded-2xl shadow-md p-6 mb-6 hidden">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 id="current-city-name" class="text-lg font-semibold text-emerald-800"></h2>
+          <p id="current-description" class="text-slate-500 text-sm"></p>
+        </div>
+        <div id="current-icon" class="text-5xl"></div>
+      </div>
+      <div class="mt-4 flex items-end gap-2">
+        <span id="current-temp" class="text-4xl font-bold text-slate-800"></span>
+        <span class="text-slate-500 mb-1">°C</span>
+      </div>
+      <p id="current-wind" class="text-sm text-slate-500 mt-1"></p>
+    </div>
+
+    <div id="forecast-section" class="hidden">
+      <h3 class="text-sm font-semibold text-slate-600 mb-2 px-1">5-Day Forecast</h3>
+      <div id="forecast-grid" class="grid grid-cols-5 gap-2"></div>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
