@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 2 - Box Sizing</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background: #f4f1ea;
+    }
+
+    .card {
+      width: 300px;
+      padding: 24px;
+      border: 2px solid #1f5c3a;
+      background: #fff;
+      margin-bottom: 20px;
+    }
+
+    /* Default box-sizing: content-box.
+       Rendered width = 300px content + 24px padding on each side (48px)
+       + 2px border on each side (4px) = 352px total. */
+    .content-box {
+      box-sizing: content-box;
+    }
+
+    /* border-box makes the declared width INCLUDE padding and border,
+       so the rendered width stays exactly 300px. */
+    .border-box {
+      box-sizing: border-box;
+    }
+
+    .result {
+      font-family: monospace;
+      background: #eee;
+      padding: 8px 12px;
+      display: inline-block;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 2: content-box vs border-box</h1>
+  <p>
+    Both cards below are declared with <code>width: 300px</code>,
+    <code>padding: 24px</code>, and a <code>2px</code> border.
+  </p>
+
+  <h2>content-box (default)</h2>
+  <div class="card content-box" id="card-content-box">This card is content-box.</div>
+  <div class="result" id="result-content-box"></div>
+  <p>
+    Math: 300px content + 24px padding &times; 2 sides (48px) + 2px border &times; 2 sides (4px)
+    = <strong>352px</strong> rendered width.
+  </p>
+
+  <h2>border-box (fixed)</h2>
+  <div class="card border-box" id="card-border-box">This card is border-box.</div>
+  <div class="result" id="result-border-box"></div>
+  <p>
+    With <code>box-sizing: border-box</code>, the padding and border are
+    subtracted FROM the declared width instead of added on top, so the
+    rendered width stays exactly <strong>300px</strong>.
+  </p>
+
+  <script>
+    // Measure the actual rendered widths to confirm the math above.
+    const contentBoxCard = document.querySelector("#card-content-box");
+    const borderBoxCard = document.querySelector("#card-border-box");
+
+    document.querySelector("#result-content-box").textContent =
+      `Measured rendered width: ${contentBoxCard.getBoundingClientRect().width}px`;
+
+    document.querySelector("#result-border-box").textContent =
+      `Measured rendered width: ${borderBoxCard.getBoundingClientRect().width}px`;
+  </script>
+
+</body>
+</html>

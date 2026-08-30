@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 4 - Zebra Table</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background: #f4f1ea;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 640px;
+      background: #fff;
+    }
+
+    caption {
+      text-align: left;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    th,
+    td {
+      padding: 12px 16px; /* comfortable cell padding */
+      text-align: left;
+      border-bottom: 1px solid #e0ddd3;
+    }
+
+    thead tr {
+      background: #1f5c3a;
+      color: #fff;
+    }
+
+    /* Zebra striping on even rows */
+    tbody tr:nth-child(even) {
+      background: #f0ede4;
+    }
+
+    tbody tr:hover {
+      background: #e6f0ea;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 4: Ethiopian Airlines Schedule</h1>
+
+  <table>
+    <caption>Ethiopian Airlines - Selected Flights from Addis Ababa</caption>
+    <thead>
+      <tr>
+        <th scope="col">Flight</th>
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Departs</th>
+        <th scope="col">Price ETB</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ET 302</td>
+        <td>Addis Ababa</td>
+        <td>Nairobi</td>
+        <td>08:15</td>
+        <td>12,500</td>
+      </tr>
+      <tr>
+        <td>ET 500</td>
+        <td>Addis Ababa</td>
+        <td>Dubai</td>
+        <td>23:40</td>
+        <td>21,300</td>
+      </tr>
+      <tr>
+        <td>ET 700</td>
+        <td>Addis Ababa</td>
+        <td>Washington D.C.</td>
+        <td>22:55</td>
+        <td>65,900</td>
+      </tr>
+      <tr>
+        <td>ET 138</td>
+        <td>Addis Ababa</td>
+        <td>Bahir Dar</td>
+        <td>06:30</td>
+        <td>3,200</td>
+      </tr>
+      <tr>
+        <td>ET 803</td>
+        <td>Addis Ababa</td>
+        <td>Cape Town</td>
+        <td>10:20</td>
+        <td>28,750</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
