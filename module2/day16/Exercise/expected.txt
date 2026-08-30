@@ -1,0 +1,6 @@
+Bill: 450.00 ETB
+Tip (10%): 45.00 ETB
+Service fee (telebirr, 1.5%): 6.75 ETB
+Total: 501.75 ETB
+Party size: 3
+Amount per person: 167.25 ETB
