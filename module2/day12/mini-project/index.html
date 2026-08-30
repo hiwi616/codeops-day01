@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habesha Eatery | Reservations</title>
+    <meta name="description" content="Reserve a table at Habesha Eatery in Addis Ababa and enjoy authentic Ethiopian cuisine.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Habesha Eatery</h1>
+
+    <nav>
+        <a href="index.html">Reservations</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+<section>
+    <h2>Welcome</h2>
+
+    <img src="Image/hero.jpg"
+         alt="Traditional Ethiopian dishes served on injera."
+         loading="lazy">
+
+    <p>
+        <strong>Welcome to Habesha Eatery. Enjoy authentic Ethiopian food prepared with
+        fresh ingredients and traditional recipes.</strong> 
+    </p>
+</section>
+
+<section>
+
+<h2>Reserve a Table</h2>
+
+<form action="#" method="post">
+
+<label for="name">Full Name</label>
+<input
+type="text"
+id="name"
+name="name"
+required>
+
+<label for="phone">Phone Number</label>
+<input
+type="tel"
+id="phone"
+name="phone"
+pattern="09[0-9]{8}"
+placeholder="09XXXXXXXX"
+required>
+
+<label for="guests">Guests</label>
+<input
+type="number"
+id="guests"
+name="guests"
+min="1"
+max="20"
+required>
+
+<label for="date">Reservation Date</label>
+<input
+type="date"
+id="date"
+name="date"
+required>
+
+<button type="submit">Reserve</button>
+
+</form>
+
+</section>
+
+<section>
+
+<h2>Menu</h2>
+
+<table>
+
+<caption>Popular Ethiopian Dishes</caption>
+
+<thead>
+
+<tr>
+<th scope="col">Dish</th>
+<th scope="col">Description</th>
+<th scope="col">ETB Price</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Doro Wat</td>
+<td>Traditional spicy chicken stew served with injera.</td>
+<td>350</td>
+</tr>
+
+<tr>
+<td>Kitfo</td>
+<td>Minced beef with Ethiopian butter.</td>
+<td>420</td>
+</tr>
+
+<tr>
+<td>Tibs</td>
+<td>Fried beef with onions and peppers.</td>
+<td>340</td>
+</tr>
+
+<tr>
+<td>Shiro</td>
+<td>Chickpea stew.</td>
+<td>220</td>
+</tr>
+
+<tr>
+<td>Beyaynetu</td>
+<td>Vegetarian combination platter.</td>
+<td>300</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<section>
+
+<h2>Find Us</h2>
+
+<iframe
+title="Google Map showing Habesha Eatery location"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126834.24404975134!2d38.674699!3d9.005401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037f2f3d6!2sAddis%20Ababa!5e0!3m2!1sen!2set!4v1690000000000!5m2!1sen!2set"
+width="100%"
+height="350"
+style="border:0;"
+loading="lazy"
+allowfullscreen>
+</iframe>
+
+</section>
+
+</main>
+
+<footer>
+<p>Bole, Addis Ababa</p>
+</footer>
+
+</body>
+</html>
