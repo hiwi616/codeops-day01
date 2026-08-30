@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 4 - Grid Template Areas</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f4f1ea;
+    }
+
+    .page-layout {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+      gap: 12px;
+    }
+
+    header {
+      grid-area: header;
+      background: #1f5c3a;
+      color: #fff;
+      padding: 16px 24px;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      margin: 0 0 0 12px;
+    }
+
+    main {
+      grid-area: main;
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      margin: 0 12px 0 0;
+    }
+
+    footer {
+      grid-area: footer;
+      background: #164a2e;
+      color: #fff;
+      padding: 12px 24px;
+      text-align: center;
+    }
+
+    /* Below 700px, collapse to a single column stacked in reading order */
+    @media (max-width: 700px) {
+      .page-layout {
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "main"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar,
+      main {
+        margin: 0 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-layout">
+    <header><h1>Habesha Market</h1></header>
+    <div class="sidebar">
+      <h2>Categories</h2>
+      <ul>
+        <li>Coffee</li>
+        <li>Grains</li>
+        <li>Spices</li>
+      </ul>
+    </div>
+    <main>
+      <h2>Featured Products</h2>
+      <p>
+        Resize the browser window narrower than 700px - the layout
+        collapses from a header/sidebar/main/footer grid into a single
+        stacked column, thanks to the media query redefining
+        <code>grid-template-areas</code>.
+      </p>
+    </main>
+    <footer>&copy; 2026 Habesha Market</footer>
+  </div>
+
+</body>
+</html>

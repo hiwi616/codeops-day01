@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 2 - Flex Cards</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px 24px;
+      background: #f4f1ea;
+    }
+
+    .card-row {
+      display: flex;
+      flex-wrap: wrap; /* lets cards drop to a new line on narrow screens */
+      gap: 16px;
+    }
+
+    .product-card {
+      flex: 1; /* each card grows/shrinks to share the available width equally */
+      min-width: 180px; /* below this width, cards wrap instead of squeezing further */
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .product-card h3 {
+      margin-top: 0;
+      color: #1f5c3a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 2: Equal-width Flex Cards</h1>
+  <p>
+    Resize the browser window narrower - once there isn't enough room
+    for all four cards at their <code>min-width</code>, they wrap onto
+    a new line instead of shrinking further, thanks to
+    <code>flex-wrap: wrap</code>.
+  </p>
+
+  <div class="card-row">
+    <div class="product-card">
+      <h3>Coffee</h3>
+      <p>Freshly roasted Ethiopian coffee beans.</p>
+    </div>
+    <div class="product-card">
+      <h3>Teff</h3>
+      <p>Stone-ground teff flour for injera.</p>
+    </div>
+    <div class="product-card">
+      <h3>Honey</h3>
+      <p>Wild forest honey from the highlands.</p>
+    </div>
+    <div class="product-card">
+      <h3>Berbere</h3>
+      <p>A blend of traditional Ethiopian spices.</p>
+    </div>
+  </div>
+
+</body>
+</html>
