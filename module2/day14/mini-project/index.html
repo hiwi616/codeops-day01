@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CBE Dashboard Rebuild</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- HEADER: Grid area "header", sticky, contains a Flexbox navbar -->
+    <header class="app-header">
+      <nav class="navbar">
+        <div class="navbar-logo">CBE Online</div>
+
+        <div class="navbar-right">
+          <div class="notification-wrapper">
+            <button class="icon-btn" aria-label="Notifications">🔔</button>
+            <!-- Absolutely positioned badge, anchored to .notification-wrapper (position: relative) -->
+            <span class="badge">3</span>
+          </div>
+          <div class="navbar-user">Selamawit T.</div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- SIDEBAR: Grid area "sidebar", a Flexbox column of nav links -->
+    <aside class="app-sidebar">
+      <ul class="sidebar-nav">
+        <li><a href="#" class="active">Dashboard</a></li>
+        <li><a href="#">Transfers</a></li>
+        <li><a href="#">Bill Payments</a></li>
+        <li><a href="#">Statements</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN: Grid area "main" -->
+    <main class="app-main">
+
+      <!-- Toolbar: a Flexbox row (title left, actions right) -->
+      <div class="toolbar">
+        <h1>Account Overview</h1>
+        <div class="toolbar-actions">
+          <button class="btn btn-primary">Transfer</button>
+          <button class="btn">Pay Bills</button>
+        </div>
+      </div>
+
+      <!-- Responsive card grid: repeat(auto-fit, minmax(...)) -->
+      <div class="cards">
+        <div class="stat-card">
+          <p class="stat-label">Current Account</p>
+          <p class="stat-value">128,450 ETB</p>
+        </div>
+
+        <div class="stat-card">
+          <!-- A second absolutely positioned element, anchored to .stat-card (relative) -->
+          <span class="tag">New</span>
+          <p class="stat-label">Savings Account</p>
+          <p class="stat-value">54,200 ETB</p>
+        </div>
+
+        <div class="stat-card">
+          <p class="stat-label">Loan Balance</p>
+          <p class="stat-value">12,000 ETB</p>
+        </div>
+
+        <div class="stat-card">
+          <p class="stat-label">Pending Transfers</p>
+          <p class="stat-value">2</p>
+        </div>
+      </div>
+
+      <section class="transactions">
+        <h2>Recent Transactions</h2>
+        <ul class="transaction-list">
+          <li>
+            <span>Transfer to Dawit Alemu</span>
+            <span class="amount negative">-1,200 ETB</span>
+          </li>
+          <li>
+            <span>Salary Deposit</span>
+            <span class="amount positive">+25,000 ETB</span>
+          </li>
+          <li>
+            <span>Ethio Telecom Bill Payment</span>
+            <span class="amount negative">-450 ETB</span>
+          </li>
+          <li>
+            <span>Transfer from Marta Solomon</span>
+            <span class="amount positive">+800 ETB</span>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- FOOTER: Grid area "footer" -->
+    <footer class="app-footer">
+      &copy; 2026 CBE Online (layout rebuild - placeholder content only)
+    </footer>
+
+  </div>
+
+</body>
+</html>
