@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 1 - Flexbox Navbar</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f4f1ea;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center; /* vertically centered */
+      justify-content: space-between; /* logo left, links+button pushed right */
+      background: #1f5c3a;
+      color: #fff;
+      padding: 16px 24px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-btn {
+      background: #f0b429;
+      color: #2b2b2b;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    main {
+      padding: 40px 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Habesha Market</div>
+    <ul class="nav-links">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button class="nav-btn">Sign In</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Exercise 1: Flexbox Navbar</h1>
+    <p>
+      The navbar above uses <code>display: flex</code> on the outer
+      <code>.navbar</code> element with <code>justify-content:
+      space-between</code> to push the logo to the left edge and the
+      links+button group to the right edge, and
+      <code>align-items: center</code> to vertically center everything.
+    </p>
+  </main>
+
+</body>
+</html>

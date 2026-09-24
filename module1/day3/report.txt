@@ -1,0 +1,5 @@
+Customer Summary
+----------------
+Sara: 1000.0 ETB
+Merry: 400.0 ETB
+Abel: 400.0 ETB

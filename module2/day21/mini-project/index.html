@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup Form</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #f4f5f7;
+      color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      padding: 48px 16px;
+      margin: 0;
+    }
+    main {
+      background: #fff;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin: 0 0 4px;
+    }
+    p.subtitle {
+      color: #666;
+      margin: 0 0 24px;
+      font-size: 0.9rem;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d4d6da;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    input:focus {
+      outline: none;
+      border-color: #5b6cff;
+      box-shadow: 0 0 0 3px rgba(91,108,255,0.15);
+    }
+    button {
+      width: 100%;
+      padding: 11px;
+      background: #5b6cff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: #4855e0; }
+    #error-area {
+      color: #c0392b;
+      font-size: 0.85rem;
+      margin-top: 12px;
+      min-height: 1.2em;
+      white-space: pre-line;
+    }
+    #entries-section {
+      margin-top: 32px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+    #entries-section h2 {
+      font-size: 1rem;
+      margin: 0 0 12px;
+    }
+    #entries-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #entries-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 10px;
+      background: #f7f8fa;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+    #entries-list li span.phone {
+      color: #666;
+    }
+    #empty-message {
+      color: #999;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Create your account</h1>
+    <p class="subtitle">Enter your name and Ethiopian phone number.</p>
+
+    <form id="signup-form" novalidate>
+      <label for="name">Full name</label>
+      <input type="text" id="name" name="name" placeholder="e.g. Abebe Kebede" autocomplete="name" />
+
+      <label for="phone">Phone number</label>
+      <input type="text" id="phone" name="phone" placeholder="e.g. 0912345678 or +251912345678" autocomplete="tel" />
+
+      <button type="submit">Sign up</button>
+
+      <div id="error-area" role="alert" aria-live="polite"></div>
+    </form>
+
+    <section id="entries-section">
+      <h2>Saved signups</h2>
+      <ul id="entries-list"></ul>
+      <p id="empty-message">No signups yet.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 3 - Specificity</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background: #f4f1ea;
+    }
+
+    /* Element selector - specificity (0, 0, 0, 1) */
+    p {
+      color: blue;
+    }
+
+    /* Class selector - specificity (0, 0, 1, 0) */
+    .highlight {
+      color: green;
+    }
+
+    /* ID selector - specificity (0, 1, 0, 0) */
+    #unique-paragraph {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 3: Specificity</h1>
+
+  <h2>Prediction</h2>
+  <p>
+    The paragraph below is targeted by three rules: an element selector
+    (<code>p</code>), a class selector (<code>.highlight</code>), and an
+    ID selector (<code>#unique-paragraph</code>), each setting a
+    different <code>color</code>.
+  </p>
+
+  <h2>Specificity scores (as ID, class, element counts)</h2>
+  <ul>
+    <li><code>p { color: blue; }</code> &rarr; specificity <strong>(0, 0, 0, 1)</strong> - one element selector.</li>
+    <li><code>.highlight { color: green; }</code> &rarr; specificity <strong>(0, 0, 1, 0)</strong> - one class selector, which outranks any number of element selectors.</li>
+    <li><code>#unique-paragraph { color: red; }</code> &rarr; specificity <strong>(0, 1, 0, 0)</strong> - one ID selector, which outranks any number of class or element selectors.</li>
+  </ul>
+
+  <p>
+    <strong>Prediction: the ID selector wins</strong>, so the paragraph
+    should render in <strong>red</strong> - ID has the highest specificity
+    of the three, regardless of the order the rules are written in.
+  </p>
+
+  <h2>Result</h2>
+  <p id="unique-paragraph" class="highlight">
+    This paragraph is targeted by all three rules. Its actual rendered
+    color confirms the winner.
+  </p>
+
+</body>
+</html>

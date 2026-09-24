@@ -1,0 +1,16 @@
+Day 1 Notes
+Today I learned:
+Terminal
+Git
+GitHub
+
+
+Git is a version control system.
+
+Git helps developers track changes in their projects.
+
+GitHub is an online platform where we can store Git repositories.
+
+Git Bash allows us to use Git and terminal commands.
+
+VS Code is my code editor.

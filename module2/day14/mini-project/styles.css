@@ -1,0 +1,279 @@
+/* styles.css - CBE Dashboard layout rebuild
+   Grid for the page skeleton, Flexbox for the components inside it. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f4f1ea;
+  color: #2b2b2b;
+}
+
+/* ============================================================
+   PAGE SKELETON - CSS Grid with named areas
+   ============================================================ */
+.app {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  min-height: 100vh;
+}
+
+/* ============================================================
+   HEADER - grid area, sticky, contains a Flexbox navbar
+   ============================================================ */
+.app-header {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #1f5c3a;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  color: #fff;
+}
+
+.navbar-logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification-wrapper {
+  position: relative; /* positioning context for the .badge below */
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Absolutely positioned, anchored to .notification-wrapper (relative parent) */
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #b3261e;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+.navbar-user {
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   SIDEBAR - grid area, Flexbox column of nav links
+   ============================================================ */
+.app-sidebar {
+  grid-area: sidebar;
+  background: #fff;
+  padding: 20px 0;
+  border-right: 1px solid #e5e0d5;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 12px 24px;
+  color: #2b2b2b;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background: #f0ede4;
+  color: #1f5c3a;
+  font-weight: 600;
+  border-left: 3px solid #1f5c3a;
+}
+
+/* ============================================================
+   MAIN - grid area
+   ============================================================ */
+.app-main {
+  grid-area: main;
+  padding: 24px;
+}
+
+/* Toolbar: Flexbox row, title left, actions right */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.toolbar h1 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: #1f5c3a;
+  color: #fff;
+  border: none;
+}
+
+/* Responsive card grid - column count adjusts on its own, no media query */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  position: relative; /* positioning context for .tag below */
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.stat-label {
+  margin: 0 0 6px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.stat-value {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f5c3a;
+}
+
+/* Absolutely positioned, anchored to .stat-card (relative parent) */
+.tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f0b429;
+  color: #2b2b2b;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.transactions {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.transactions h2 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.transaction-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.transaction-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e0d5;
+  font-size: 0.9rem;
+}
+
+.transaction-list li:last-child {
+  border-bottom: none;
+}
+
+.amount.positive {
+  color: #1f5c3a;
+  font-weight: 600;
+}
+
+.amount.negative {
+  color: #b3261e;
+  font-weight: 600;
+}
+
+/* ============================================================
+   FOOTER - grid area
+   ============================================================ */
+.app-footer {
+  grid-area: footer;
+  background: #164a2e;
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   RESPONSIVE: single media query collapses to one column
+   ============================================================ */
+@media (max-width: 700px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 12px;
+  }
+
+  .sidebar-nav a {
+    padding: 10px 12px;
+  }
+}

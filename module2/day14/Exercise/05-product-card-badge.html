@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 5 - Positioned Badge</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 60px 24px;
+      background: #f4f1ea;
+    }
+
+    .product-card {
+      position: relative; /* establishes the positioning context for the badge */
+      width: 260px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card h3 {
+      margin-top: 0;
+      color: #1f5c3a;
+    }
+
+    .product-card .price {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .sale-badge {
+      position: absolute; /* positioned relative to .product-card, the nearest positioned ancestor */
+      top: -14px;
+      right: -14px;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #b3261e;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1.1;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 5: Positioned Sale Badge</h1>
+  <p>
+    The badge is pinned to the card's top-right corner using
+    <code>position: relative</code> on the card (establishing a
+    positioning context) and <code>position: absolute</code> on the
+    badge, offset with negative <code>top</code>/<code>right</code>
+    values so it overlaps the card's corner.
+  </p>
+
+  <div class="product-card">
+    <div class="sale-badge">ETB<br />Sale</div>
+    <h3>Ethiopian Coffee Beans</h3>
+    <p>Freshly roasted, 500g bag.</p>
+    <p class="price">450 ETB</p>
+  </div>
+
+</body>
+</html>

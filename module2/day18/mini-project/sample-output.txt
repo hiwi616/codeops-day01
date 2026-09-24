@@ -1,0 +1,19 @@
+===== TeleBirr Transaction Report =====
+
+Total credits: 7900 ETB (4 transactions)
+Total debits: 1500 ETB (3 transactions)
+Net balance: 6400 ETB
+
+--- Receipts ---
+Credit: Almaz Bekele - 1200 ETB
+Debit: Dawit Alemu - 450 ETB
+Credit: Tigist Worku - 3000 ETB
+Debit: Hanna Girma - 800 ETB
+Credit: Yonas Tesfaye - 1500 ETB
+Debit: Marta Solomon - 250 ETB
+Credit: Abel Mekonnen - 2200 ETB
+
+--- Correcting a transaction amount (spread, no mutation) ---
+Original transaction: { id: 2, customer: 'Dawit Alemu', amount: 450, type: 'debit' }
+Corrected copy: { id: 2, customer: 'Dawit Alemu', amount: 500, type: 'debit' }
+Original unchanged? true

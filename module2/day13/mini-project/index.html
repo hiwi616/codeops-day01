@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habesha Beans — Bole, Addis Ababa</title>
+  <meta name="description" content="Business profile card for Habesha Beans, a cafe in Bole, Addis Ababa." />
+
+  <!-- Google Fonts: Poppins for headings, Inter for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ============================================================
+       CSS variables: palette + spacing scale, used via var() throughout
+       ============================================================ */
+    :root {
+      /* Palette, defined in HSL so hover states can tweak lightness only */
+      --color-primary-h: 152;
+      --color-primary-s: 45%;
+      --color-primary-l: 28%;
+      --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+
+      --color-accent: hsl(42, 80%, 55%);
+      --color-bg: hsl(40, 30%, 95%);
+      --color-card-bg: #ffffff;
+      --color-text: hsl(0, 0%, 20%);
+      --color-text-muted: hsl(0, 0%, 45%);
+
+      /* Spacing scale */
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 40px;
+
+      --radius: 14px;
+    }
+
+    /* box-sizing: border-box set globally */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-bg);
+      font-family: "Inter", sans-serif;
+      color: var(--color-text);
+      padding: var(--space-lg);
+    }
+
+    /* ============================================================
+       The card: box model (padding, border, border-radius, margin)
+       ============================================================ */
+    .card {
+      position: relative;
+      background: var(--color-card-bg);
+      max-width: 380px;
+      width: 100%;
+      margin: var(--space-md);
+      padding: var(--space-xl) var(--space-lg) var(--space-lg);
+      border: 1px solid hsl(40, 20%, 85%);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    /* Pseudo-element #1: a decorative accent bar along the top of the card */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--color-accent);
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+
+    .logo-badge {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto var(--space-md);
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    /* Typographic hierarchy: business name */
+    .business-name {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin: 0 0 var(--space-xs);
+      color: var(--color-primary);
+    }
+
+    /* Tagline */
+    .tagline {
+      margin: 0 0 var(--space-md);
+      font-style: italic;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Pseudo-element #2: a decorative accent mark before the tagline */
+    .tagline::before {
+      content: "\2726  "; /* a small decorative star, followed by a space */
+      color: var(--color-accent);
+      font-style: normal;
+    }
+
+    /* Body text with generous line-height */
+    .description {
+      line-height: 1.7;
+      color: var(--color-text);
+      margin: 0 0 var(--space-lg);
+      font-size: 0.95rem;
+    }
+
+    .details {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Contact button, hover changes only the lightness value in hsl() */
+    .contact-btn {
+      display: inline-block;
+      background: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+      color: #fff;
+      border: none;
+      padding: var(--space-sm) var(--space-xl);
+      border-radius: 999px;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+
+    .contact-btn:hover,
+    .contact-btn:focus {
+      /* Same hue and saturation - only the lightness changes on hover */
+      background: hsl(var(--color-primary-h), var(--color-primary-s), 20%);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="card">
+    <div class="logo-badge" aria-hidden="true">HB</div>
+
+    <h1 class="business-name">Habesha Beans</h1>
+    <p class="tagline">Freshly roasted coffee, the Bole way</p>
+
+    <p class="description">
+      Habesha Beans is a cozy neighborhood cafe in Bole, Addis Ababa,
+      serving traditional Ethiopian coffee ceremonies alongside modern
+      espresso drinks. We source our beans directly from farmers in
+      Yirgacheffe and Sidamo, roasting small batches fresh every morning.
+    </p>
+
+    <ul class="details">
+      <li>Bole Road, near Edna Mall, Addis Ababa</li>
+      <li>Open daily, 7:00 AM – 9:00 PM</li>
+      <li>Accepts TeleBirr</li>
+    </ul>
+
+    <a class="contact-btn" href="tel:+251911000000">Contact Us</a>
+  </main>
+
+</body>
+</html>
