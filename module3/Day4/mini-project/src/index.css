@@ -1,0 +1,282 @@
+:root {
+  --green: #1f5c3a;
+  --gold: #e3a92b;
+  --ink: #1d1d1b;
+  --paper: #fbfaf7;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.header {
+  background: var(--green);
+  color: #fff;
+  margin: 0 -1rem 1.5rem;
+  padding: 2rem 1.5rem;
+  border-bottom: 6px solid var(--gold);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.header p {
+  margin: 0.25rem 0 0;
+  opacity: 0.85;
+}
+
+.menu {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.card {
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e4e1d8;
+  border-left: 5px solid var(--gold);
+  border-radius: 6px;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.dish h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.dish p {
+  margin: 0;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.badge {
+  font-size: 0.75rem;
+  background: #b3261e;
+  color: #fff;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  margin-left: 0.4rem;
+}
+
+.empty {
+  padding: 1.5rem;
+  text-align: center;
+  color: #6b6b66;
+}
+
+/* Day 3: interactivity */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chip {
+  font: inherit;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid #cfcabb;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--green);
+}
+
+.chip-active {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.chip:focus-visible,
+.add-btn:focus-visible,
+.submit-btn:focus-visible,
+.order-form input:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.dish {
+  align-items: center;
+  gap: 1rem;
+}
+
+.dish-info p {
+  margin-top: 0.15rem;
+}
+
+.count {
+  margin-left: 0.5rem;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.add-btn {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.4rem 1.1rem;
+  border: 0;
+  border-radius: 6px;
+  background: var(--gold);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  filter: brightness(0.95);
+}
+
+.total {
+  margin: 1.5rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid #e4e1d8;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.order-form {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid #e4e1d8;
+  border-radius: 6px;
+}
+
+.order-form h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.order-form label {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.order-form input {
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #cfcabb;
+  border-radius: 6px;
+}
+
+.order-form input[aria-invalid="true"] {
+  border-color: #b3261e;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b6b66;
+}
+
+.hint-error {
+  color: #b3261e;
+}
+
+.submit-btn {
+  font: inherit;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 6px;
+  background: var(--green);
+  color: #fff;
+  cursor: pointer;
+}
+
+.submit-btn:disabled {
+  background: #b9c4bd;
+  cursor: not-allowed;
+}
+
+.confirm {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background: #e8f3ec;
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* Day 4: loading, error and search */
+.search {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #cfcabb;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.search:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.status {
+  padding: 1.5rem;
+  text-align: center;
+  color: #6b6b66;
+}
+
+.status-error {
+  border: 1px solid #b3261e;
+  border-radius: 6px;
+  background: #fbeceb;
+  color: #b3261e;
+  font-weight: 600;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.15rem;
+  border: 2px solid #cfcabb;
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+}
