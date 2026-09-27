@@ -1,0 +1,524 @@
+:root {
+  --green: #1f5c3a;
+  --gold: #e3a92b;
+  --ink: #1d1d1b;
+  --paper: #fbfaf7;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.header {
+  background: var(--green);
+  color: #fff;
+  margin: 0 -1rem 1.5rem;
+  padding: 2rem 1.5rem;
+  border-bottom: 6px solid var(--gold);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.header p {
+  margin: 0.25rem 0 0;
+  opacity: 0.85;
+}
+
+.menu {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.card {
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e4e1d8;
+  border-left: 5px solid var(--gold);
+  border-radius: 6px;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.dish h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.dish p {
+  margin: 0;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.badge {
+  font-size: 0.75rem;
+  background: #b3261e;
+  color: #fff;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  margin-left: 0.4rem;
+}
+
+.empty {
+  padding: 1.5rem;
+  text-align: center;
+  color: #6b6b66;
+}
+
+/* Day 3: interactivity */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chip {
+  font: inherit;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid #cfcabb;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--green);
+}
+
+.chip-active {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.chip:focus-visible,
+.add-btn:focus-visible,
+.submit-btn:focus-visible,
+.order-form input:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.dish {
+  align-items: center;
+  gap: 1rem;
+}
+
+.dish-info p {
+  margin-top: 0.15rem;
+}
+
+.count {
+  margin-left: 0.5rem;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.add-btn {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.4rem 1.1rem;
+  border: 0;
+  border-radius: 6px;
+  background: var(--gold);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  filter: brightness(0.95);
+}
+
+.total {
+  margin: 1.5rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid #e4e1d8;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.order-form {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid #e4e1d8;
+  border-radius: 6px;
+}
+
+.order-form h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.order-form label {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.order-form input {
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #cfcabb;
+  border-radius: 6px;
+}
+
+.order-form input[aria-invalid="true"] {
+  border-color: #b3261e;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b6b66;
+}
+
+.hint-error {
+  color: #b3261e;
+}
+
+.submit-btn {
+  font: inherit;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 6px;
+  background: var(--green);
+  color: #fff;
+  cursor: pointer;
+}
+
+.submit-btn:disabled {
+  background: #b9c4bd;
+  cursor: not-allowed;
+}
+
+.confirm {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background: #e8f3ec;
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* Day 4: loading, error and search */
+.search {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #cfcabb;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.search:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.status {
+  padding: 1.5rem;
+  text-align: center;
+  color: #6b6b66;
+}
+
+.status-error {
+  border: 1px solid #b3261e;
+  border-radius: 6px;
+  background: #fbeceb;
+  color: #b3261e;
+  font-weight: 600;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.15rem;
+  border: 2px solid #cfcabb;
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+}
+
+/* Day 5: theme, cart, form comparison */
+.app-dark {
+  --paper: #1b1b19;
+  --ink: #f2f0e9;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.app-dark .card,
+.app-dark .search,
+.app-dark .order-form,
+.app-dark .delivery input {
+  background: #262622;
+  border-color: #3a3a35;
+  color: var(--ink);
+}
+
+.app-dark .chip {
+  background: #262622;
+  border-color: #3a3a35;
+  color: var(--ink);
+}
+
+.theme-toggle {
+  margin-top: 0.75rem;
+  font: inherit;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.checkout-panel {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e4e1d8;
+  border-radius: 6px;
+}
+
+.app-dark .checkout-panel {
+  background: #262622;
+  border-color: #3a3a35;
+}
+
+.cart ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cart li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0;
+}
+
+.cart-empty {
+  margin: 1.5rem 0;
+  color: #6b6b66;
+}
+
+.cart-total {
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.remove-btn,
+.clear-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid #b3261e;
+  border-radius: 6px;
+  background: transparent;
+  color: #b3261e;
+  cursor: pointer;
+}
+
+.clear-btn {
+  margin-top: 0.75rem;
+}
+
+/* Week 1 project: header badge */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-top h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Day 6: routing */
+.nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+  opacity: 0.85;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.nav-link-active {
+  opacity: 1;
+  border-bottom-color: var(--gold);
+  font-weight: 600;
+}
+
+.dish-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+
+.dish {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  color: #6b6b66;
+  font-size: 0.85rem;
+}
+
+.page-home,
+.page-notfound,
+.page-login,
+.page-dish,
+.page-checkout {
+  padding: 0 1rem 2rem;
+}
+
+.cta-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.dish-category {
+  color: #6b6b66;
+  margin: 0.25rem 0;
+}
+
+.dish-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green);
+  margin: 0.5rem 0 1rem;
+}
+
+/* Day 6 mini-project: cart page */
+.page-cart .checkout-panel {
+  margin-top: 1rem;
+}
+
+/* Day 8: checkout form validation */
+.field-error {
+  margin: 0.2rem 0 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #b3261e;
+}
+
+/* Invalid fields get a dashed, thicker border, not just a red one -
+   the shape difference (not only the color) is what keeps an invalid
+   field identifiable with a greyscale display or for someone who can't
+   distinguish red from the surrounding grey/green palette. The warning
+   glyph in Field.jsx's error message is the same kind of color-independent
+   cue. */
+.order-form input[aria-invalid="true"],
+.order-form select[aria-invalid="true"] {
+  border-color: #b3261e;
+  border-style: dashed;
+  border-width: 2px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-form select,
+.order-form textarea {
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #cfcabb;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.order-form textarea {
+  resize: vertical;
+}
