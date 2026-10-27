@@ -1,0 +1,26 @@
+# BOUNDARY.md — Server & Client Boundary Map (Day 47)
+
+- **components/DeliveryMap.jsx**: Client Leaf (`'use client'`) — Leaflet map instance rendering tiles, custom markers, and delivery radius polygons.
+- **components/DeliveryMapWrapper.jsx**: Client Component (`'use client'`) — Isolates `dynamic(() => import(...), { ssr: false })` to keep server components free from client runtime crashes.
+- **app/api/orders/stream/route.js**: Edge/Node Server Handler — Persistent `text/event-stream` SSE streaming endpoint.
+- **app/api/orders/export/route.js**: Node Server Handler — Generates and streams downloadable CSV transaction records.
+- **lib/formatters.js**: Shared Helper — Universal `Intl` currency and timestamp formatter.
+- **app/orders/history/page.js**: Server Component — Direct server sorting and pagination with zero client data waterfalls.
+- **components/SalesChart.jsx**: Client Component (`'use client'`) — Recharts bar chart with accessible `.sr-only` table.
+- **components/AccessibleOrderTable.jsx**: Server Component — Accessible HTML data table with `aria-sort` headers and pagination links.
+- **middleware.js**: Edge Runtime — Reads session cookies and redirects unauthenticated requests.
+- **app/robots.js**: Server Route — Serves `/robots.txt`.
+- **app/sitemap.js**: Server Route — Serves `/sitemap.xml`.
+- **lib/session.js**: Server Helper — Reads/writes HTTP-only session cookies.
+- **app/actions.js**: Server Action (`'use server'`) — Handles order placement and staff status mutations.
+- **app/auth-actions.js**: Server Actions (`'use server'`) — Handles user session mutations.
+- **app/layout.js**: Server Component — Global layout shell.
+- **app/kitchen/page.js**: Server Component — Staff queue dashboard.
+- **app/menu/page.js**: Server Component — Hourly ISR dish catalog.
+- **app/menu/[id]/page.js**: Server Component — Pre-rendered dish detail pages.
+- **components/MenuSearch.jsx**: Client Component (`'use client'`) — SWR search leaf.
+- **components/OrderStatus.jsx**: Client Component (`'use client'`) — SWR polling leaf.
+- **components/AddToCartButton.jsx**: Client Component (`'use client'`) — Store dispatch leaf.
+- **components/Providers.jsx**: Client Component (`'use client'`) — Provides `useCart()` hook and cart context.
+- **app/cart/page.js**: Client Component (`'use client'`) — Interactive cart line view.
+- **app/checkout/page.js**: Client Component (`'use client'`) — Progressive order submission form.

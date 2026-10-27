@@ -1,0 +1,21 @@
+# BOUNDARY.md — Server & Client Boundary Map (Day 45)
+
+- **middleware.js**: Edge Runtime — Reads session cookie, runs narrow path matcher, and executes early redirects before entering Node runtime.
+- **app/robots.js**: Server Route — Dynamically generates `/robots.txt` crawler exclusion rules.
+- **app/sitemap.js**: Server Route — Dynamically generates `/sitemap.xml` mapping all 15 authentic dishes and public routes.
+- **lib/session.js**: Server Helper — Reads/writes HTTP-only, secure cookies via Next.js `next/headers`.
+- **lib/env.js**: Runtime Helper — Validates environment variables across client and server boundaries using Zod.
+- **app/actions.js**: Server Action (`'use server'`) — Implements `placeOrder` and `updateOrderStatus` with schema validation and cache revalidation[cite: 1, 3].
+- **app/auth-actions.js**: Server Actions (`'use server'`) — Executes sign-in, sign-out, and ownership-guarded mutations (`cancelOrder`).
+- **app/layout.js**: Server Component — Configures zero-CLS font, injects Restaurant JSON-LD, and resolves user session identity[cite: 3].
+- **app/signin/page.js**: Server Component — Form targeting server actions with open-redirect sanitization.
+- **app/kitchen/page.js**: Server Component — Verifies staff role on server before rendering live order queue and action buttons.
+- **app/page.js**: Server Component — Static landing page (`○`)[cite: 1].
+- **app/menu/page.js**: Server Component — Directly fetches dishes from data layer; renders responsive `next/image` with priority on LCP element[cite: 3].
+- **app/menu/[id]/page.js**: Server Component — Pre-renders static dish HTML via `generateStaticParams`, generates dynamic Open Graph tags, and embeds MenuItem JSON-LD[cite: 3].
+- **components/MenuSearch.jsx**: Client Component (`'use client'`) — Interactive leaf utilizing 300ms debounce, `null` key for empty inputs, and SWR caching.
+- **components/OrderStatus.jsx**: Client Component (`'use client'`) — Background polling leaf via SWR (`refreshInterval: 5000`) seeded with server `fallbackData`.
+- **components/AddToCartButton.jsx**: Client Component (`'use client'`) — Interactive button leaf dispatching items into the cart store[cite: 3].
+- **components/Providers.jsx**: Client Component (`'use client'`) — Exports `useCart()` custom hook; manages browser cart state and localStorage synchronization[cite: 3].
+- **app/cart/page.js**: Client Component (`'use client'`) — Displays interactive cart lines and running ETB calculations[cite: 1, 3].
+- **app/checkout/page.js**: Client Component (`'use client'`) — Progressive form using `useActionState` and `useCart()`[cite: 1, 2].

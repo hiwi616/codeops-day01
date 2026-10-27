@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* FilterShell sets data-filter on a wrapper; these rules hide non-matching server-rendered
+   cards, so filtering needs zero extra JavaScript for the list itself. */
+[data-filter="Mains"] [data-category]:not([data-category="Mains"]),
+[data-filter="Vegan"] [data-category]:not([data-category="Vegan"]),
+[data-filter="Sides"] [data-category]:not([data-category="Sides"]),
+[data-filter="Drinks"] [data-category]:not([data-category="Drinks"]) {
+  display: none;
+}

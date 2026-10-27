@@ -1,0 +1,27 @@
+{
+  "name": "addis-eats-day40",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "boundary": "node scripts/list-client.mjs",
+    "scan": "node scripts/scan-bundle.mjs",
+    "analyze": "next experimental-analyze",
+    "first-load-js": "node scripts/first-load-js.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

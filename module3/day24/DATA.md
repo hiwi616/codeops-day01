@@ -1,0 +1,13 @@
+# DATA.md — Query Strategy, Data Lifecycles & Real-Time Formats (Day 49 Capstone)
+
+| Query Key / Data Source            | Where It Runs                        | Refresh Rule / Transport                   | Architectural Justification                                                                                         |
+| :--------------------------------- | :----------------------------------- | :----------------------------------------- | :------------------------------------------------------------------------------------------------------------------ |
+| Direct DB (`getDishes()`)          | Server Component (`/menu`)           | Hourly ISR (`revalidate = 3600`)           | Menu catalog changes infrequently; server pre-rendering eliminates client waterfalls and delivers instant HTML.     |
+| Static Dish Lookup (`getDishById`) | Server Component (`/menu/[id]`)      | Build-time SSG (`generateStaticParams`)    | Pre-renders all 15 authentic Ethiopian dishes at build time for instant loads and rich SEO indexing.                |
+| `globalThis.ORDERS_DB`             | Server Actions & API Routes          | On Mutation (`revalidatePath`)             | Persists order placement, status transitions, and ownership checks across server requests.                          |
+| `/api/orders/${id}`                | Client Hook (`useSWR`)               | `refreshInterval: 5000`                    | Polls live kitchen transitions every 5s; seeded with server `fallbackData` so first paint has zero loading spinner. |
+| `/api/dishes?q=${debounced}`       | Client Hook (`useSWR`)               | 300ms debounce (`null` when empty)         | Prevents request-per-keystroke floods; `keepPreviousData: true` prevents layout flashing between terms.             |
+| Order History (`searchParams`)     | Server Component (`/orders/history`) | Per URL Navigation (`?sort=&order=&page=`) | Executes sorting and pagination on the server, streaming only 4 rows per page without client table libraries.       |
+| SSE Stream (`/api/orders/stream`)  | Server Route Handler                 | Push (`text/event-stream`, 4s heartbeat)   | Broadcasts real-time kitchen queue counts over a persistent HTTP connection.                                        |
+| CSV Export (`/api/orders/export`)  | Server Route Handler                 | On Demand (`GET`, Auth Guarded)            | Streams RFC 4180 CSV transaction registers directly to disk.                                                        |
+| Cart State (`useCart`)             | Client Context (`Providers.jsx`)     | `localStorage` Synced                      | Tab-local shopping state requires zero server round-trips until checkout submission.                                |
